@@ -8,7 +8,7 @@ def lambda_handler(event, context):
     stop_response = ec2.describe_instances(
         Filters=[
             {'Name': 'tag:Action', 'Values': ['Auto-Stop']},
-            {'Name': 'tag:USER', 'Values': ['Sagar']},
+            {'Name': 'tag:USER', 'Values': ['Jasmine']},
             {'Name': 'instance-state-name', 'Values': ['running']}
         ]
     )
@@ -23,7 +23,7 @@ def lambda_handler(event, context):
     start_response = ec2.describe_instances(
         Filters=[
             {'Name': 'tag:Action', 'Values': ['Auto-Start']},
-            {'Name': 'tag:USER', 'Values': ['Sagar']},
+            {'Name': 'tag:USER', 'Values': ['Jasmine']},
             {'Name': 'instance-state-name', 'Values': ['stopped']}
         ]
     )
