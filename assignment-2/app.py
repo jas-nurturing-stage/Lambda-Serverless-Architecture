@@ -2,7 +2,7 @@ import boto3
 from datetime import datetime, timezone, timedelta
 import os
 
-BUCKET_NAME = os.environ.get('BUCKET_NAME', 'sagar-s3-cleanup-bucket')
+BUCKET_NAME = os.environ.get('BUCKET_NAME', 'jasmine-s3-lambda ')
 DAYS_TO_KEEP = int(os.environ.get('DAYS_TO_KEEP', 30))
 
 s3 = boto3.client('s3')

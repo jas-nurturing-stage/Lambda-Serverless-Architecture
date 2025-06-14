@@ -6,7 +6,7 @@
 
 1. Log into the [AWS S3 Console](https://console.aws.amazon.com/s3/).
 2. Click **Create bucket**.
-3. Provide a globally unique bucket name (e.g., `sagar-s3-cleanup-bucket`).
+3. Provide a globally unique bucket name (e.g., `jasmine-s3-lambda`).
 4. Choose your preferred region.
 5. Click **Create bucket**.
 
@@ -32,7 +32,7 @@
 ![Add Permission](images/iam-permission.png)
 #### 📝 **2.3 Finalize Role Creation**
 
-1. Name the role, e.g., `sagar-lambda-s3-cleanup-role`.
+1. Name the role, e.g., `S3-Lambda-Jasmine`.
 2. Click **Create role**.
 ![Create Role](images/iam-permission.png)
 
@@ -52,7 +52,7 @@
 2. **Change default execution role:**
 
    * Select **Use an existing role**
-   * Choose the `sagar-lambda-s3-cleanup-role` you just created
+   * Choose the `S3-Lambda-Jasmine` you just created
 3. ✅ Click **Create function**
 ![Create Lambda function](images/create-lambda-function.png)
 
@@ -65,7 +65,7 @@ import boto3
 from datetime import datetime, timezone, timedelta
 import os
 
-BUCKET_NAME = os.environ.get('BUCKET_NAME', 'sagar-s3-cleanup-bucket')
+BUCKET_NAME = os.environ.get('BUCKET_NAME', 'jasmine-s3-lambda')
 DAYS_TO_KEEP = int(os.environ.get('DAYS_TO_KEEP', 30))
 
 s3 = boto3.client('s3')
@@ -110,7 +110,7 @@ Click **Deploy**.
 1. Click on the **Configuration** tab in Lambda.
 2. Go to **Environment variables** and add:
 
-   * `BUCKET_NAME`: e.g., `sagar-s3-cleanup-bucket`
+   * `BUCKET_NAME`: e.g., `jasmine-s3-lambda`
    * `DAYS_TO_KEEP`: e.g., `30`
 
 Click **Save**.
