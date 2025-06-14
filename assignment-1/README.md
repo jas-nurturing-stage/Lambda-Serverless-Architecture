@@ -29,7 +29,7 @@ Go to [AWS Console](https://console.aws.amazon.com/).
    * ➕ Click **Add tag**.
 
      * **Key:** `USER`
-     *  **Value:** `Sagar`
+     *  **Value:** `Jasmine`
 5. **Repeat** to launch a second instance:
 
    * 🏷️ Name: `AutoStartInstance`
@@ -40,7 +40,7 @@ Go to [AWS Console](https://console.aws.amazon.com/).
    * ➕ Click **Add tag**.
 
      * **Key:** `USER`
-     *  **Value:** `Sagar`
+     *  **Value:** `Jasmine`
 6. 🚀 **Launch Instances** and wait for both to be in **running** state.
 
 ---
@@ -63,7 +63,7 @@ Go to [AWS Console](https://console.aws.amazon.com/).
 1. **Policy:** Search for and select `AmazonEC2FullAccess`.
    *(For production: use custom least-privilege policy.)*
 2. Click **Next**
-3. 📝 **Role Name:** Example: `SagarLambdaEC2ManagementRole`
+3. 📝 **Role Name:** Example: `JasmineLambdaEC2ManagementRole`
 4. ✅ Click **Create Role**
 ![Create Role](images/role-3.png)
 ---
@@ -84,7 +84,7 @@ Go to [AWS Console](https://console.aws.amazon.com/).
 2. **Change default execution role:**
 
    * Select **Use an existing role**
-   * Choose the `SagarLambdaEC2ManagementRole` you just created
+   * Choose the `JasmineLambdaEC2ManagementRole` you just created
 3. ✅ Click **Create function**
 ![Create Lambda function](images/create-lambda.png)
 ---
@@ -110,7 +110,7 @@ def lambda_handler(event, context):
     stop_response = ec2.describe_instances(
         Filters=[
             {'Name': 'tag:Action', 'Values': ['Auto-Stop']},
-            {'Name': 'tag:USER', 'Values': ['Sagar']},
+            {'Name': 'tag:USER', 'Values': ['Jasmine']},
             {'Name': 'instance-state-name', 'Values': ['running']}
         ]
     )
@@ -125,7 +125,7 @@ def lambda_handler(event, context):
     start_response = ec2.describe_instances(
         Filters=[
             {'Name': 'tag:Action', 'Values': ['Auto-Start']},
-            {'Name': 'tag:USER', 'Values': ['Sagar']},
+            {'Name': 'tag:USER', 'Values': ['Jasmine']},
             {'Name': 'instance-state-name', 'Values': ['stopped']}
         ]
     )
