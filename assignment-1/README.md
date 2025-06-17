@@ -42,6 +42,10 @@ Go to [AWS Console](https://console.aws.amazon.com/).
      * **Key:** `USER`
      *  **Value:** `Jasmine`
 6. 🚀 **Launch Instances** and wait for both to be in **running** state.
+7. ![launch Auto-stop](https://github.com/user-attachments/assets/9a3fc414-4bd7-4680-bb86-bcf5b8f36756)
+
+8. ![launchAuto-start](https://github.com/user-attachments/assets/35b76dcb-c6f2-42eb-afd4-b85bb973e4d8)
+
 
 ---
 
@@ -51,7 +55,7 @@ Go to [AWS Console](https://console.aws.amazon.com/).
 
 1. In AWS Console, 🔎 search and select **IAM**.
 2. Click **Roles** > **Create Role**.
-![Create Role](images/role-1.png)
+![creating role](https://github.com/user-attachments/assets/520cfc0d-b03b-49c2-8efc-b40b22f68fc5)
 ##### 2.2 🛡️ Create Role
 
 1. **Trusted entity:** Choose **AWS service**
@@ -65,7 +69,8 @@ Go to [AWS Console](https://console.aws.amazon.com/).
 2. Click **Next**
 3. 📝 **Role Name:** Example: `JasmineLambdaEC2ManagementRole`
 4. ✅ Click **Create Role**
-![Create Role](images/role-3.png)
+![attachpolicy   role creation](https://github.com/user-attachments/assets/f3434913-ad2f-431f-b990-d9c9ca60de82)
+
 ---
 
 #### ⚡ **Step 3: Create Lambda Function**
@@ -86,7 +91,8 @@ Go to [AWS Console](https://console.aws.amazon.com/).
    * Select **Use an existing role**
    * Choose the `JasmineLambdaEC2ManagementRole` you just created
 3. ✅ Click **Create function**
-![Create Lambda function](images/create-lambda.png)
+![Function creation](https://github.com/user-attachments/assets/4697cfce-5fd2-4882-b4d4-319197fa6a70)
+
 ---
 
 #### 💻 **Step 4: Add Lambda Code**
@@ -156,7 +162,8 @@ def lambda_handler(event, context):
         'StartedInstances': instances_to_start
     }
 ```
-![Lambda Code](images/LambdaCode.png)
+![Deploying code](https://github.com/user-attachments/assets/d0beb9d8-3d67-4683-88e1-9ffc159843c2)
+
 ##### 4.3 🚀 **Click Deploy**
 
 ---
@@ -166,7 +173,8 @@ def lambda_handler(event, context):
 ##### 5.1 🟢 Prepare Test State
 
 * Ensure your "Auto-Stop" instance is **running** and "Auto-Start" is **stopped** for visible effect.
-![Prepare Test State](images/PrepareTestState.png)
+!![success logs of function](https://github.com/user-attachments/assets/b75b7bab-e067-48ce-ac3b-1a9af359d392)
+
 ##### 5.2 🧑‍🔬 Test in Lambda Console
 
 1. In your Lambda function page, click **Test**.
@@ -176,7 +184,8 @@ def lambda_handler(event, context):
    * Leave the event JSON as `{}` (empty event)
    * Click **Save**
 3. 🟢 Click **Test** (again) to **run** the function.
-![Test Function](images/test-function.png)
+![creationof testevent](https://github.com/user-attachments/assets/30864d22-b67d-4724-90ae-e495ae3f77e9)
+
 ##### 5.3 🔍 Check the Output
 
 * Scroll down to **Execution results**: You should see the list of instance IDs started/stopped.
@@ -184,7 +193,8 @@ def lambda_handler(event, context):
 
   * Instance with tag `Auto-Stop` is **stopping**
   * Instance with tag `Auto-Start` is **starting**
-![output.png](images/output.png)
+![Autostartrunning](https://github.com/user-attachments/assets/c8dd0a93-2812-4b1d-9491-6929eeb3a1af)
+
 ##### 5.4 📄 View Logs (Optional)
 
 * Go to **Monitor > View logs in CloudWatch** to see Lambda’s print output.
