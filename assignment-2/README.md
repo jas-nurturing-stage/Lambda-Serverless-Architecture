@@ -54,7 +54,7 @@
    * Select **Use an existing role**
    * Choose the `S3-Lambda-Jasmine` you just created
 3. ✅ Click **Create function**
-![Create Lambda function](images/create-lambda-function.png)
+![Lambda-S3-cleanup-role](https://github.com/user-attachments/assets/13722bde-9319-4b04-b095-f35347be224e)
 
 ##### 📝 **3.2 Lambda Function Code**
 
@@ -115,7 +115,7 @@ Click **Deploy**.
 
 Click **Save**.
 
-![Environment](images/environment.png)
+![edit env variables](https://github.com/user-attachments/assets/80449e40-b7fd-453c-bf05-271eb98526fb)
 
 ---
 
@@ -131,9 +131,14 @@ Click **Save**.
    * Leave the event JSON as `{}` (empty event)
    * Click **Save**
 3. 🟢 Click **Test** (again) to **run** the function.
-![Test Function](images/test-function.png)
-![Test Function Success](images/test-function-success.png)
+![test-event-lambda-function](https://github.com/user-attachments/assets/afaab3ca-f9bb-4aff-a0de-1e4cb95609af)
+
+![test-function-success](https://github.com/user-attachments/assets/78fd4007-81ff-431b-9458-11a920e43dff)
+
 ##### 4.2 🔍 S3 Verification
+![before lambda function triggered](https://github.com/user-attachments/assets/6718df7e-62fb-43d8-8f2f-a1cb94cc6807)
+
+![image](https://github.com/user-attachments/assets/3cc5f51f-5c72-495a-9ea6-996feb82c1d1)
 
 1. Return to your S3 bucket.
 2. Refresh the view to confirm files older than your configured days have been deleted.
