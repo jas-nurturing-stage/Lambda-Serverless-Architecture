@@ -25,7 +25,7 @@
 
 1. Name the role, e.g., `sagar-lambda-s3-readonly-role`.
 2. Click **Create role**.
-![Create Role](images/create-role.png)
+![create role](https://github.com/user-attachments/assets/b0da639d-0573-4192-9813-3a78472f85e9)
 
 #### ⚡ **Step 3: Create Lambda Function**
 
@@ -45,7 +45,7 @@
    * Select **Use an existing role**
    * Choose the `sagar-lambda-s3-readonly-role` you just created
 3. ✅ Click **Create function**
-![Create Lambda function](images/create-lambda-function.png)
+![create-lambda-function ](https://github.com/user-attachments/assets/00602d8b-46c6-4ec6-a77c-178f4e3c2c91)
 
 ##### 📝 **3.2 Lambda Function Code**
 
@@ -106,9 +106,10 @@ Click **Deploy**.
    * Leave the event JSON as `{}` (empty event)
    * Click **Save**
 3. 🟢 Click **Test** (again) to **run** the function.
-![Test Function](images/test-function.png)
+![test-function](https://github.com/user-attachments/assets/33e2319f-2e1e-4ca7-a7ec-30d58fe7cdb8)
+
 ##### 4.2 🔍 S3 Verification
-![Test Function Success](images/test-function-success.png)
+![function-success](https://github.com/user-attachments/assets/d4d6ba31-2b66-4e53-9ba1-ecdbcede095e)
 
 #### **Result Example in Logs**
 
